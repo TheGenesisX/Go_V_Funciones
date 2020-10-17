@@ -2,19 +2,22 @@ package main
 
 import "fmt"
 
-func fibonacci(limite int) {
-	a1 := 0
-	a2 := 1
-	a3 := 1
-
-	for i := 0; i < limite; i++ {
-		fmt.Println(a1)
-		a1 = a2
-		a2 = a3
-		a3 = a1 + a2
+func fibonacci(n int) int {
+	if n == 0 {
+		return 0
+	} else if n == 1 {
+		return 1
+	} else {
+		return fibonacci(n-1) + fibonacci(n-2)
 	}
 }
 
 func main() {
-	fibonacci(18)
+	n := 10
+	i := 0
+
+	for i < n {
+		fmt.Println(fibonacci(i))
+		i++
+	}
 }
